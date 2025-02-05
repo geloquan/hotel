@@ -1,0 +1,7 @@
+function PlsConnect() {
+    const strEndpoint = 'https://localhost:5103'; 
+
+    return strEndpoint;
+  }
+  
+  export default PlsConnect;
