@@ -1,5 +1,6 @@
 
 using System.Data;
+using System.Data.SqlTypes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Model;
@@ -52,6 +53,7 @@ public class InsertController : ControllerBase {
     [HttpPut]
     [Route("API/WEBAPI/InsertController/InsertClient")]
     public string InsertClient(Client client) {
+        Console.WriteLine($"client: {client}");
         try {
             myconnection = new SqlConnection(new GetConnection().PlsConnect());
             myconnection.Open();
@@ -73,7 +75,7 @@ public class InsertController : ControllerBase {
             """;
 
             mycommand = new SqlCommand(sqlstatement, myconnection);
-            mycommand.Parameters.Add("@_client_id", SqlDbType.VarChar).Value = client.name;
+            mycommand.Parameters.Add("@_name", SqlDbType.VarChar).Value = client.name;
             mycommand.Parameters.Add("@_address", SqlDbType.VarChar).Value = client.address;
             mycommand.Parameters.Add("@_dateofbirth", SqlDbType.DateTime).Value = client.dateofbirth;
 

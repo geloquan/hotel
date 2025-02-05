@@ -28,8 +28,7 @@ public class ListController : ControllerBase {
                 id = dr["id"] != DBNull.Value ? (int?)dr["id"] : null,
                 name = dr["name"].ToString() ?? "",
                 address = dr["address"].ToString() ?? "",
-                dateofbirth = dr["dateofbirth"] != DBNull.Value ? (SqlDateTime)dr["dateofbirth"] : SqlDateTime.Null
-                
+                dateofbirth = dr["dateofbirth"].ToString() ?? ""
             };
         }
         dr.Close();

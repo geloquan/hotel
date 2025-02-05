@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\programming\\cbyte\\hotel\\hotel\\hotel.csproj": {}
+    "H:\\Programming\\CBYTE\\hotel\\hotel\\hotel.csproj": {}
   },
   "projects": {
-    "C:\\programming\\cbyte\\hotel\\hotel\\hotel.csproj": {
+    "H:\\Programming\\CBYTE\\hotel\\hotel\\hotel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\programming\\cbyte\\hotel\\hotel\\hotel.csproj",
+        "projectUniqueName": "H:\\Programming\\CBYTE\\hotel\\hotel\\hotel.csproj",
         "projectName": "hotel",
-        "projectPath": "C:\\programming\\cbyte\\hotel\\hotel\\hotel.csproj",
+        "projectPath": "H:\\Programming\\CBYTE\\hotel\\hotel\\hotel.csproj",
         "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
-        "outputPath": "C:\\programming\\cbyte\\hotel\\hotel\\obj\\",
+        "outputPath": "H:\\Programming\\CBYTE\\hotel\\hotel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Windows\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Users\\Windows\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
