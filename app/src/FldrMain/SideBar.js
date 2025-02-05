@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { RouteList } from './RouteList';
 import { Link, useLocation } from 'react-router-dom';
 import { FaRightFromBracket } from 'react-icons/fa6';
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 const PathLink = (parts) => {
     const location = useLocation();
@@ -31,9 +32,11 @@ const renderRoutes = (routes) => {
 export const SideBar = () => {
     return (
         <>
-        <div className="mx-2 my-2">
-            {renderRoutes(RouteList)}
-        </div>
+            <Col md={3} lg={2} className="bg-light min-vh-100 p-0">
+                <div className="mx-2 my-2">
+                    {renderRoutes(RouteList)}
+                </div>
+            </Col>
         </>
     );
 };

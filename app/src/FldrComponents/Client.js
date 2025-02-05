@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { TableTemplate } from "../FldrClass/TableTemplate";
-import {
-  Form,
-  Row,
-  Col,
-  Button,
-  InputGroup,
-  Card,
-  Container,
-} from "react-bootstrap";
+import { Table, Button, Alert, Pagination, Container, Row, Col } from 'react-bootstrap';
 import { SideBar } from "../FldrMain/SideBar";
 import axios from "axios";
 
@@ -16,6 +8,21 @@ export default function Client ()  {
   const [clients, setClients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [fetched, setFetched] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentClients = clients.slice(indexOfFirstItem, indexOfLastItem);
+
+
+  const handleAddClient = () => {
+    // Example of adding a client - you'd typically connect this to a form or modal
+  };
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   const columns = [
     { name: "ID", selector: (row) => row.id, sortable: true, width: "20%" },
@@ -47,12 +54,32 @@ export default function Client ()  {
   }, [fetched]);  // Dependency array ensures fetchIncomeStatements is called only when fetched changes
 
   return (
-    <Container fluid>
-      <Row className="h-100">
-        <Col md={3} lg={2} className="bg-light p-0 min-vh-100">
-          <SideBar />
-        </Col>
-      </Row>
-    </Container>
+    <>
+    <Row>
+      <SideBar />
+      <Col>
+        <Row className="mt-3">
+          <Col xs={6}>
+            <Button variant="primary" onClick={handleAddClient}>
+              Add Client
+            </Button>
+          </Col>
+          <Col xs={6} className="d-flex justify-content-end">
+            <Pagination>
+              {[...Array(Math.ceil(clients.length / itemsPerPage)).keys()].map(number => (
+                <Pagination.Item
+                  key={number + 1}
+                  active={number + 1 === currentPage}
+                  onClick={() => handlePageChange(number + 1)}
+                >
+                  {number + 1}
+                </Pagination.Item>
+              ))}
+            </Pagination>
+          </Col>
+        </Row>
+      </Col>
+    </Row>
+    </>
   );
 };
