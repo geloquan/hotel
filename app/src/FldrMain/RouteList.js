@@ -1,7 +1,5 @@
 import React from 'react';
-// import { Dashboard } from "../Dashboard"
 import Dashboard from '../FldrComponents/Dashboard';
-import { FaTruck } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { BsCollection } from "react-icons/bs";
 
@@ -22,6 +20,16 @@ export const RouteList = [
         key: "Clients",
         route: "/client",
         layout: "/client",
+        icon: <BsCollection className='me-2' />,
+        noCollapse: true,
+        childs: []
+    },
+    {
+        type: "collapse",
+        name: "Rates",
+        key: "Rates",
+        route: "/rate",
+        layout: "/rate",
         icon: <BsCollection className='me-2' />,
         noCollapse: true,
         childs: []

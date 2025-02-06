@@ -4,12 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaRightFromBracket } from 'react-icons/fa6';
 import { Container, Row, Col, Card } from "react-bootstrap";
 
-const PathLink = (parts) => {
-    const location = useLocation();
-    const { pathname } = location;
-    return pathname.split('/')[parts];
-};
-
 const SidebarDivider = () => {
     return <hr className='m-0 mb-2' />;
 };

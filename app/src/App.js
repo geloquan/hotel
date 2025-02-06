@@ -6,6 +6,7 @@ import { MainLayout } from './FldrMain/MainLayout';
 import { RouteList } from './FldrMain/RouteList';
 import Dashboard from './FldrComponents/Dashboard';
 import Client from './FldrComponents/Client';
+import Rate from './FldrComponents/Rate';
 
 const renderRoutes = (routes) => {
   return routes.map((route, index) => {
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} /> 
           <Route path="/client" element={<Client />} /> 
+          <Route path="/rate" element={<Rate />} /> 
         </Routes>
     </BrowserRouter>
   );

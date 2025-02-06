@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { SideBar } from './SideBar';
 import { useLocation, Outlet } from 'react-router-dom';
 import { FaAlignLeft, FaCircleUser } from 'react-icons/fa6'; 
-// import RSJLOGO from '../images/RSJLOGO.png';
-// import { UserSession } from '../FldrAuthentication/SessionComponent';
 
 export const MainLayout = () => {
     const Location = useLocation();

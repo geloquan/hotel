@@ -2412,9 +2412,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Programming\\CBYTE\\hotel\\hotel\\hotel.csproj",
-      "projectName": "hotel",
-      "projectPath": "H:\\Programming\\CBYTE\\hotel\\hotel\\hotel.csproj",
+      "projectUniqueName": "H:\\Programming\\CBYTE\\hotel\\hotel\\server.csproj",
+      "projectName": "server",
+      "projectPath": "H:\\Programming\\CBYTE\\hotel\\hotel\\server.csproj",
       "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
       "outputPath": "H:\\Programming\\CBYTE\\hotel\\hotel\\obj\\",
       "projectStyle": "PackageReference",

@@ -89,6 +89,39 @@ public class InsertController : ControllerBase {
         }
     }
     [HttpPut]
+    [Route("API/WEBAPI/InsertController/InsertWalkInBook")]
+    public string InsertWalkInBook(WalkInBook walkInBook) {
+        Console.WriteLine($"InsertWalkInBook: {walkInBook}");
+        try {
+            myconnection = new SqlConnection(new GetConnection().PlsConnect());
+            myconnection.Open();
+
+            string sqlstatement = """
+                EXEC InsertBookAndCheckout
+                    @client_id = @_client_id
+                    @paid_rate_id = @_paid_rate_id
+                    @check_in_datetime = @_check_in_datetime
+                    @desired_check_out_datetime = @_desired_check_out_datetime
+                    @payment_method = @_payment_method
+                    @paid_amount = @_paid_amount
+            """;
+            
+            using (SqlCommand mycommand = new SqlCommand(sqlstatement, myconnection)) {
+                mycommand.Parameters.AddWithValue("@_client_id", walkInBook.client_id);
+                mycommand.Parameters.AddWithValue("@_paid_rate_id", walkInBook.paid_rate_id);
+                mycommand.Parameters.AddWithValue("@_check_in_datetime", walkInBook.check_in_datetime);
+                mycommand.Parameters.AddWithValue("@_desired_check_out_datetime", walkInBook.desired_check_out_datetime);
+                mycommand.Parameters.AddWithValue("@_payment_method", walkInBook.payment_method);
+                mycommand.Parameters.AddWithValue("@_paid_amount", walkInBook.paid_amout);
+
+                int rowsAffected = mycommand.ExecuteNonQuery();
+                return rowsAffected > 0 ? "Delete successful" : "Deletion failed";
+            }
+        } catch (Exception e) {
+            return e.ToString();
+        }
+    }
+    [HttpPut]
     [Route("API/WEBAPI/InsertController/InsertCheckout")]
     public string InsertCheckout(Checkout checkout) {
         return "";

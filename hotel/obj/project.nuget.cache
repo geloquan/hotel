@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Llqdmoq5LDQ=",
+  "dgSpecHash": "p9C+aZb4Q+g=",
   "success": true,
-  "projectFilePath": "H:\\Programming\\CBYTE\\hotel\\hotel\\hotel.csproj",
+  "projectFilePath": "H:\\Programming\\CBYTE\\hotel\\hotel\\server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Windows\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
     "C:\\Users\\Windows\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
